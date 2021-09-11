@@ -19,7 +19,6 @@ HTML Forms <form> <input> <select> <textarea> <checkbox> <radio>
 HTML Quiz
 HTML Projects
 
---------------
 HTML Level - 2
 --------------
 
