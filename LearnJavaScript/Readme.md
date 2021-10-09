@@ -129,7 +129,7 @@ Operators
     Assignment =
     Arithmetic +, -, *, /, %
     Comparison > < <= >= != ==
-    Logical a && b, a || b
+    Logical a && b, a > 10 || b < 20
     Bitwise 
     String +
     Other ++ --
@@ -143,3 +143,38 @@ JS popups:
     confirm
     prompt
 
+Conditional statements:
+    if
+    else if
+    else
+    nested if else
+
+JavaScript loops
+for(var i=0; i< 10; i++){
+
+}
+
+var a = 0; 
+// var a = 10;
+while(a < 10>){
+    if(a === 3) {
+        break;
+    }
+    a++;
+}
+
+var a = 0;
+do {
+    a++;
+} while(a < 10)
+
+
+true && true ==> true
+true && false ==> false
+false && true ==> false
+false && false ==> false
+
+true || true ==> true
+true || false ==> true
+false || true ==> true
+false || false ==> false
