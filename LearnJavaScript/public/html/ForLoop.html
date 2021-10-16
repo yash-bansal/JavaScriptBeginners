@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .car{
+                height: 100px;
+                width: 100px;
+                background: cyan;
+                margin: 1rem;
+            }
+        </style>
+    </head>
+<body>
+    <h2>JavaScript For Loop</h2>
+    <div id="demo">
+
+
+    </div>
+
+    <script>
+        const cars = ["BMW", "Volvo", "Saab", "Jaguar", "Tata Nano"];
+        
+        for (let i = 0; i < cars.length; i++) {
+            let carName = cars[i];
+            document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div class="car">' +carName+'</div>';
+        }
+        
+    </script>
+</body>
+</html>
