@@ -134,6 +134,17 @@ Operators
     String +
     Other ++ --
 
+Logical comparisons:
+true && true ==> true
+true && false ==> false
+false && true ==> false
+false && false ==> false
+
+true || true ==> true
+true || false ==> true
+false || true ==> true
+false || false ==> false
+
 Data types
 Primitive [declared with var, string, number, boolean, undefined, null]
 Non-primitive (reference) [object, arrays]
@@ -169,12 +180,4 @@ do {
 } while(a < 10)
 
 
-true && true ==> true
-true && false ==> false
-false && true ==> false
-false && false ==> false
 
-true || true ==> true
-true || false ==> true
-false || true ==> true
-false || false ==> false

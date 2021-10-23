@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .car {
+            margin: 1rem;
+            display: inline-block;
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>JavaScript Function</h2>
+    <div id="demo"></div>
+    <script>
+        function bringGlassOfWater(type) {
+            document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>Going to kitchen!!!!</div>';
+            document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>Getting a mug!!!!</div>';
+            if(type == "Cold"){
+                document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>Filling the cold water!!!!</div>';
+            } else if(type == "Hot"){
+                document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>Filling the hot water!!!!</div>';
+            } else {
+                document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>Filling the normal water!!!!</div>'; 
+            }
+            document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>Here\'s the Water!!!!</div>';
+        }
+        bringGlassOfWater('Cold');
+        bringGlassOfWater('Hot');
+        bringGlassOfWater();
+
+
+        
+    </script>
+</body>
+</html>

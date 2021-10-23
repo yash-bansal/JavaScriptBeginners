@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .car{
+                margin: 1rem;
+                display: inline-block;
+                width: 400px;
+            }
+        </style>
+    </head>
+<body>
+    <h2>JavaScript While Loop</h2>
+    <div id="demo">
+
+
+    </div>
+
+    <script>
+        const cars = ["BMW", "Volvo", "Saab"];
+        
+        let i = 0;
+
+        while ( i < cars.length) {
+            let carName = cars[i];
+            document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<img class="car" src="../images/'+carName+'.jpg">';
+
+            i++;
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .car {
+            margin: 1rem;
+            display: inline-block;
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>JavaScript Do While Loop</h2>
+    <div id="demo">
+
+
+    </div>
+
+    <script>
+        const lights = ["Green", "Orange", "Red"];
+
+        let stop = true;
+        let i = 0;
+        do {
+            let light = lights[i];
+            i++;
+            if (light == "Red") {
+                stop = true;
+                document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>STOP!!!!</div>';
+            } else {
+                document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>You can go!</div>';
+            }
+        } while (stop != true);
+    </script>
+</body>
+
+</html>

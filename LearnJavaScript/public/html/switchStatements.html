@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .car {
+            margin: 1rem;
+            display: inline-block;
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>JavaScript Switch</h2>
+    <div id="demo">
+
+
+    </div>
+
+    <script>
+        const lights = ["Green", "Orange", "Red","Off"];
+        let i = 0;
+        while (i< lights.length) {
+            let light = lights[i];
+            
+            i++;
+            
+            switch (light) {
+                case "Green":
+                case "Orange":
+                    document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>You can go!</div>';
+                    break;
+                case "Red":
+                    document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>STOP!!!!</div>';
+                    break;
+                default:
+                    document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>Its off!</div>';
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
