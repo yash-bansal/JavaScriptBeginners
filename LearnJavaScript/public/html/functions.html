@@ -15,24 +15,54 @@
     <h2>JavaScript Function</h2>
     <div id="demo"></div>
     <script>
-        function bringGlassOfWater(type) {
-            document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>Going to kitchen!!!!</div>';
-            document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>Getting a mug!!!!</div>';
-            if(type == "Cold"){
-                document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>Filling the cold water!!!!</div>';
-            } else if(type == "Hot"){
-                document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>Filling the hot water!!!!</div>';
+        // function bringGlassOfWater(type) {
+        //     document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>Going to kitchen!!!!</div>';
+        //     document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>Getting a mug!!!!</div>';
+        //     if(type == "Cold"){
+        //         document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>Filling the cold water!!!!</div>';
+        //     } else if(type == "Hot"){
+        //         document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>Filling the hot water!!!!</div>';
+        //     } else {
+        //         document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>Filling the normal water!!!!</div>'; 
+        //     }
+        //     document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>Here\'s the Water!!!!</div>';
+        // }
+        // bringGlassOfWater('Cold');
+        // bringGlassOfWater('Hot');
+        // bringGlassOfWater();
+
+        function checkIfIHaveAccess(email, password){
+            // your functionality
+            let isValidUser = false;
+            // if(email == 'yash@gmail.com'){
+            //     if(password == 'qwerty@123'){
+            //         alert('You have access !!!');
+            //     } else {
+            //         alert('Your password is wrong!!!');
+            //     }
+            // } else {
+            //     alert('Your email is wrong!!!');
+            // }
+
+            if(email == 'yash@gmail.com'){
+                if(password == 'qwerty@123'){
+                    isValidUser = true;
+                } else {
+                    isValidUser = false;
+                }
             } else {
-                document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>Filling the normal water!!!!</div>'; 
+                isValidUser = false;
             }
-            document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + '<div>Here\'s the Water!!!!</div>';
+
+            return isValidUser;
         }
-        bringGlassOfWater('Cold');
-        bringGlassOfWater('Hot');
-        bringGlassOfWater();
 
-
-        
+        let isValid = checkIfIHaveAccess('yash1@gmail.com', 'qwerty@123');
+        if(isValid){
+            document.getElementById("demo").innerHTML = '<div>You have access</div>';
+        } else {
+            document.getElementById("demo").innerHTML = '<div>You don\'t have access</div>';
+        }
     </script>
 </body>
 </html>
