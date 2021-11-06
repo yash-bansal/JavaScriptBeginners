@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <title>jQuery Selectors</title>
+</head>
+
+<body>
+
+    <h1>Hello H1 - 1</h1>
+    <h1>Hello H1 - 2</h1>
+    <h1>Hello H1 - 3</h1>
+    <h1>Hello H1 - 4</h1>
+    <h2 class="myClass">Hello H2</h2>
+
+    <h3>Hello H3</h3>
+    <h4 class="myClass">Hello H4</h4>
+
+    <h5>Hello H5</h5>
+    <a target="_blank" href="www.google.com">Google</a>
+    <a target="_blank" href="www.google2.com">Google 2</a>
+    <a href="www.yahoo.com">Yahoo</a>
+    <a href="www.yahoo2.com">Yahoo 2</a>
+<ul>
+    <li>Sunday</li>
+    <li>Monday</li>
+    <li>Tuesday</li>
+    <li>Wed</li>
+    <li>Thu</li>
+</ul>
+
+    <button id="button1">Show/Hide</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(
+            function () {
+                // your code
+                $("#button1").click(function () {
+                    $('ul li:nth-child(5)').toggle();
+                });
+            }
+        );
+    </script>
+
+</body>
+
+</html>
