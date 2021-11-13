@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <title>jQuery Selectors</title>
+    <style>
+        img{
+            width: 200px;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="../images/BMW.jpg">
+    <img src="../images/Saab.jpg">
+    <img src="../images/tree-736885__480.jpg">
+    <img src="../images/Volvo.jpg">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(
+            function () {
+                // your code
+                $("img").mouseenter(function () {
+                    $(this).fadeTo("slow", 1)
+                });
+                $("img").mouseleave(function () {
+                    $(this).fadeTo("slow", 0.5)
+                });
+            }
+        );
+    </script>
+
+</body>
+
+</html>

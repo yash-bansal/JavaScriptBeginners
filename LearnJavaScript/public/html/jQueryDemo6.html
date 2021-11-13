@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <title>jQuery Selectors</title>
+    <style>
+        p{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 data-tag="1">Question 1</h1>
+    <p id="Answer1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam aspernatur modi suscipit nostrum laborum minima amet nihil ipsam. Ipsam consectetur eos voluptas dolorum aspernatur, quia inventore iure distinctio pariatur totam non illo aliquid, temporibus aliquam nostrum quaerat id, ipsa provident eligendi veniam libero accusantium iste nemo fugiat! Numquam, nesciunt reprehenderit.</p>
+
+    <h1 data-tag="2">Question 2</h1>
+    <p id="Answer2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam aspernatur modi suscipit nostrum laborum minima amet nihil ipsam. Ipsam consectetur eos voluptas dolorum aspernatur, quia inventore iure distinctio pariatur totam non illo aliquid, temporibus aliquam nostrum quaerat id, ipsa provident eligendi veniam libero accusantium iste nemo fugiat! Numquam, nesciunt reprehenderit.</p>
+
+    <h1 data-tag="3">Question 3</h1>
+    <p id="Answer3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam aspernatur modi suscipit nostrum laborum minima amet nihil ipsam. Ipsam consectetur eos voluptas dolorum aspernatur, quia inventore iure distinctio pariatur totam non illo aliquid, temporibus aliquam nostrum quaerat id, ipsa provident eligendi veniam libero accusantium iste nemo fugiat! Numquam, nesciunt reprehenderit.</p>
+
+    <h1 data-tag="4">Question 4</h1>
+    <p id="Answer4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam aspernatur modi suscipit nostrum laborum minima amet nihil ipsam. Ipsam consectetur eos voluptas dolorum aspernatur, quia inventore iure distinctio pariatur totam non illo aliquid, temporibus aliquam nostrum quaerat id, ipsa provident eligendi veniam libero accusantium iste nemo fugiat! Numquam, nesciunt reprehenderit.</p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(
+            function () {
+                // your code
+                $("h1").click(function () {
+                    $('#Answer' + $(this).attr("data-tag")).slideToggle(); // $('#Answer4')
+                });
+            }
+        );
+    </script>
+
+</body>
+
+</html>
