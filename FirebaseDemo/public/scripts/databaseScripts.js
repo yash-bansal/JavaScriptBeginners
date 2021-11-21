@@ -1,5 +1,6 @@
 let database = null;
 let rootRef = null;
+
 document.addEventListener('DOMContentLoaded', function () {
     database = firebase.database();
     var ref = database.ref();
@@ -9,12 +10,16 @@ document.addEventListener('DOMContentLoaded', function () {
             for (let category in snapshot.val().products) {
                 document.getElementById('products').innerHTML = category + '<br>';
                 for (let item in snapshot.val().products[category]) {
-                    document.getElementById('products').innerHTML += snapshot.val().products[category][item].productName + `<button onclick="deleteFromDB('${item}')">Delete</button><br>`;
+                    document.getElementById('products').innerHTML += `<input id="${item}" type="text" class="inputs" value="${snapshot.val().products[category][item].productName }"/><button onclick="deleteFromDB('${item}')" style="margin-left: 1rem">Delete</button><br>`;
                 }
             }
         } else {
             document.getElementById('products').innerHTML = "No product available.";
         }
+        $('.inputs').focusout(function(){
+            console.log('On focus out event');
+            updateToDB($(this).attr('id'), $(this).val());
+        })
     }, function (error) {
         console.log("Error: " + error.code);
     });
@@ -28,8 +33,12 @@ function createToDB() {
             productName: productValue
         });
 }
-function updateToDB() {
+function updateToDB(id, productValue) {
     console.log('Update');
+    database.ref('/products/watch/' + id)
+    .set({
+        productName: productValue
+    });
 }
 function deleteFromDB(id) {
     console.log('Delete', id);

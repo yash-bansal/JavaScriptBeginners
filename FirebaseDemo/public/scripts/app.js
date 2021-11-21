@@ -12,14 +12,13 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     // Initialize Firebase
     const app = firebase.initializeApp(firebaseConfig);
-    
 });
 function loginWithGoogle() {
     const userNameElement = document.querySelector('#userName');
 
-    const provider = new firebase.auth.GoogleAuthProvider();
+    const provider = new firebase.auth.GoogleAuthProvider();  //A
 
-    firebase.auth().signInWithPopup(provider)
+    firebase.auth().signInWithPopup(provider) //B
         .then(function (result) {
             const user = result.user;
             console.log(user);
