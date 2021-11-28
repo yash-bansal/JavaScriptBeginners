@@ -411,7 +411,7 @@
 							<!-- Start Single Tab -->
 							<div class="tab-pane fade show active" id="man" role="tabpanel">
 								<div class="tab-single">
-									<div class="row">
+									<div class="row" id="trendingItems">
 										<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 											<div class="single-product">
 												<div class="product-img">
@@ -2301,9 +2301,11 @@
 							style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">Eshop - Free
 							Deliveries at your door-step.</span>
 						<h2 class="text-white wow fadeInUp" data-wow-delay=".4s"
-							style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Same day delivery if your become a member.</h2>
+							style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Same day
+							delivery if your become a member.</h2>
 						<p class="text-white wow fadeInUp" data-wow-delay=".6s"
-							style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">Exchange at return facilities available for selected products.
+							style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">Exchange at
+							return facilities available for selected products.
 						</p>
 
 						<div class="button">
@@ -2746,8 +2748,8 @@
 					<div class="row">
 						<div class="col-lg-6 col-12">
 							<div class="left">
-								<p>Copyright © 2020 <a href="http://www.Eshop.com"
-										target="_blank">Eshop</a> - All Rights Reserved.</p>
+								<p>Copyright © 2020 <a href="http://www.Eshop.com" target="_blank">Eshop</a> - All
+									Rights Reserved.</p>
 							</div>
 						</div>
 						<div class="col-lg-6 col-12">
@@ -2794,6 +2796,75 @@
 	<script src="js/easing.js"></script>
 	<!-- Active JS -->
 	<script src="js/active.js"></script>
+
+	<!-- My scripts -->
+	<script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+	<!-- Add Firebase products that you want to use -->
+	<script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-database.js"></script>
+
+	<script src="scripts/app.js"></script>
+	<script>
+		let database = null;
+		let rootRef = null;
+
+		document.addEventListener('DOMContentLoaded', function () {
+			database = firebase.database();
+			var ref = database.ref();
+			ref.on("value", function (snapshot) {
+				console.log(snapshot.val());
+				if (snapshot.val() !== null) {
+					for (let category in snapshot.val().products) {
+						document.getElementById('trendingItems').innerHTML = "";
+						for (let item in snapshot.val().products[category]) {
+							document.getElementById('trendingItems').innerHTML +=
+								`<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+											<div class="single-product">
+												<div class="product-img">
+													<a href="product-details.html">
+														<img src="images/${snapshot.val().products[category][item].productName}.jpg" style="width: 100%;">
+														<img src="images/${snapshot.val().products[category][item].productName}.jpg" style="width: 100%;">
+													</a>
+													<div class="button-head">
+														<div class="product-action">
+															<a data-toggle="modal" data-target="#exampleModal"
+																title="Quick View" href="#"><i
+																	class=" ti-eye"></i><span>Quick Shop</span></a>
+															<a title="Wishlist" href="#"><i
+																	class=" ti-heart "></i><span>Add to
+																	Wishlist</span></a>
+															<a title="Compare" href="#"><i
+																	class="ti-bar-chart-alt"></i><span>Add to
+																	Compare</span></a>
+														</div>
+														<div class="product-action-2">
+															<a title="Add to cart" href="#">Add to cart</a>
+														</div>
+													</div>
+												</div>
+												<div class="product-content">
+													<h3><a href="product-details.html">${snapshot.val().products[category][item].productName}</a></h3>
+													<div class="product-price">
+														<span>$29.00</span>
+													</div>
+												</div>
+											</div>
+										</div>`
+								;
+						}
+					}
+				} else {
+					document.getElementById('products').innerHTML = "No product available.";
+				}
+				$('.inputs').focusout(function () {
+					console.log('On focus out event');
+					updateToDB($(this).attr('id'), $(this).val());
+				})
+			}, function (error) {
+				console.log("Error: " + error.code);
+			});
+		});
+	</script>
 </body>
 
 </html>

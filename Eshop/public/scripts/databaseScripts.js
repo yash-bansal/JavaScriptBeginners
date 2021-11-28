@@ -12,12 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('products').innerHTML = "";
                 for (let item in snapshot.val().products[category]) {
                     document.getElementById('products').innerHTML += 
-                    `<div class="col-sm-3">
-                        <img src="images/${snapshot.val().products[category][item].productName }.jpg" style="width: 100%;">
-                        <h2 class="bg-info" style="text-align: center; color: white;">${snapshot.val().products[category][item].productName }</h2>
-                    </div>`
-                    ;
-                    // `<input id="${item}" type="text" class="inputs" value="${snapshot.val().products[category][item].productName }"/><button onclick="deleteFromDB('${item}')" style="margin-left: 1rem">Delete</button><br>`;
+                        `<input id="${item}" type="text" class="inputs" value="${snapshot.val().products[category][item].productName }"/><button onclick="deleteFromDB('${item}')" style="margin-left: 1rem">Delete</button><br>`;
                 }
             }
         } else {
